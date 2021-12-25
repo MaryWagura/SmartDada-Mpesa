@@ -1,7 +1,10 @@
 <?php
 	echo $telNum;
 require_once('index.html');
-
+$telNum=$_POST['phonenumber'];
+	echo $telNum;
+	$amount=1;
+	$accRef=$_POST['SmartDada'];
 
 
 if (isset($_POST['pay'])) {
