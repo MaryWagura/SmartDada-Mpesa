@@ -1,6 +1,6 @@
 <?php
 
-require('../mpesaClasses/access_token.php');
+require('../access_token.php');
 
 $userData = file_get_contents('php://input');
 // $ipaddress = getHostByName(getHostByName());

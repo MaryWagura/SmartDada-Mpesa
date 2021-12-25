@@ -1,5 +1,5 @@
 <?php
-
+echo $access_token;
 $consumerKey ="30seb4c6qEUVhsmVGFwHbtgUAMXTCSka";
 $consumerSecret = "Ev4Av18m4ZMwzznY";
 
@@ -18,6 +18,6 @@ $result=json_decode($result);
 
 $access_token=$result->access_token;
 
-print $access_token;
+echo $access_token;
 curl_close($curl);
 ?>
