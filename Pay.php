@@ -1,6 +1,7 @@
 <?php
-require_once('Lipa-Mpesa.php');
 echo "bhjnmk";
+require_once('Lipa-Mpesa.php');
+
 
 if (isset($_POST['submitReg'])) {
 
