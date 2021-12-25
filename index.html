@@ -68,7 +68,7 @@ $DogLicenseNumber=$_SESSION["DogLicenseNumber"];
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active text-align form-new" id="home" role="tabpanel" aria-labelledby="home-tab">
                             <h5 class="register-heading"><i>Mpesa Donation Form</h5></i>
-                            <div class="row register-form">
+                            <div class="row register-form"method="POST">
                                 <div class="col-md-12">
                                     <form method="post">
                                        
@@ -76,7 +76,7 @@ $DogLicenseNumber=$_SESSION["DogLicenseNumber"];
          <label for="phonenumber"><b>Input Your Phone Number</label><br><br></b>
         <input type="text" class="form-control" name="phonenumber" placeholder="07" required><br><br> 
                                             
-                                        <div class="form-group">
+                                        <div class="form-group"method="POST">
                                              <a href="Pay.php">
                                            <input type="button"  class="btnContactSubmit" value="Pay">
                                             </a></div>

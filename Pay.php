@@ -1,5 +1,5 @@
 <?php
-require_once('Lipa-Mpesa.php');
+require_once('index.html');
 
 
 if (isset($_POST['submitReg'])) {
