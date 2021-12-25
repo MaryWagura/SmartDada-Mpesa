@@ -5,6 +5,9 @@ $userData = file_get_contents('php://input');
 $consumerKey ="30seb4c6qEUVhsmVGFwHbtgUAMXTCSka";
 $consumerSecret = "Ev4Av18m4ZMwzznY";
 
+ $BusinessShortCode = '174379';
+  $Passkey = 'bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919';  
+
 $headers=['Content-Type:application/json; charset=utf8'];
 
 $url = 'https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials';
