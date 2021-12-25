@@ -26,6 +26,7 @@ print_r($data);
 $MerchantRequestID=$data->Body->stkCallback->MerchantRequestID;
 $CheckoutRequestID=$data->Body->stkCallback->CheckoutRequestID;
 $ResultCode=$data->Body->stkCallback->ResultCode;
+echo $MerchantRequestID;
 
 if($ResultCode==0)
 {
