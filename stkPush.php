@@ -1,7 +1,5 @@
 <?php
 
-require('../access_token.php');
-
 $userData = file_get_contents('php://input');
 // $ipaddress = getHostByName(getHostByName());
 echo $access_token;
@@ -32,7 +30,7 @@ $url = 'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest';
 
 $curl = curl_init();
 curl_setopt($curl, CURLOPT_URL, $url);
-curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type:application/json',"Authorization:Bearer $token"));
+curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type:application/json',"Authorization:Bearer" .$access_token));
 
 
 if (date('G')<10)
