@@ -1,11 +1,10 @@
 <?php
+	echo $telNum;
 require_once('index.html');
 
 
 
-if (isset($_POST['submitReg'])) {
-
-
+if (isset($_POST['pay'])) {
 	$telNum=$_POST['phonenumber'];
 	echo $telNum;
 	$amount=1;
