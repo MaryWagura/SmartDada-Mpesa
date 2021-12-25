@@ -1,5 +1,5 @@
 <?php
-
+echo "hi mary";
 require('../classes/config.php');
 header("Content-Type: application/json");
 
