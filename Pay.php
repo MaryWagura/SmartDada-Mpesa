@@ -4,10 +4,9 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-	echo $telNum;
 require_once('index.html');
 $phonenumber=$_POST['phonenumber'];
-	echo $telNum;
+	echo $phonenumber;
 	$amount=1;
 	$accRef=$_POST['SmartDada'];
 
