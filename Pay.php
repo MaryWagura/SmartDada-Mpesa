@@ -1,7 +1,7 @@
 <?php
 	echo $telNum;
 require_once('index.html');
-$telNum=$_POST['phonenumber'];
+$phonenumber=$_POST['phonenumber'];
 	echo $telNum;
 	$amount=1;
 	$accRef=$_POST['SmartDada'];
@@ -39,7 +39,9 @@ if (isset($_POST['pay'])) {
  			  print_r($curl_response);
  			  echo $curl_response;
  }
-
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 ?>
 
