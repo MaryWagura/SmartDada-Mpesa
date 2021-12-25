@@ -3,14 +3,6 @@ require_once('index.html');
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-
-
-$phonenumber=$_POST['phonenumber'];
-	echo $phonenumber;
-	$amount=1;
-	$accRef=$_POST['SmartDada'];
-
-
 if (isset($_POST['pay'])) {
 	$telNum=$_POST['phonenumber'];
 	echo $telNum;
