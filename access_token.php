@@ -1,6 +1,7 @@
 <?php
 echo $access_token;
 $consumerKey ="30seb4c6qEUVhsmVGFwHbtgUAMXTCSka";
+echo $consumerKey;
 $consumerSecret = "Ev4Av18m4ZMwzznY";
 
 $headers=['Content-Type:application/json; Charset=utf8'];
