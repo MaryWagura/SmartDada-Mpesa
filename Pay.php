@@ -1,4 +1,9 @@
 <?php
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 	echo $telNum;
 require_once('index.html');
 $phonenumber=$_POST['phonenumber'];
@@ -39,9 +44,7 @@ if (isset($_POST['pay'])) {
  			  print_r($curl_response);
  			  echo $curl_response;
  }
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+
 
 ?>
 
