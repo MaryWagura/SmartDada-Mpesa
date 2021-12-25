@@ -2,10 +2,12 @@
 require_once('index.html');
 
 
+
 if (isset($_POST['submitReg'])) {
 
 
 	$telNum=$_POST['phonenumber'];
+	echo $telNum;
 	$amount=1;
 	$accRef=$_POST['SmartDada'];
 	echo "string";
