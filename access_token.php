@@ -18,6 +18,6 @@ $result=json_decode($result);
 
 $access_token=$result->access_token;
 
-print($access_token);
+print $access_token;
 curl_close($curl);
 ?>
