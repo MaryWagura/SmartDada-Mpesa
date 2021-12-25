@@ -27,6 +27,7 @@ $BusinessShortCode='174379';
 $Amount=$data->Amount;
 $PhoneNumber=$data->telNum;
 $CallBackURL=' https://radiant-castle-32278.herokuapp.com/callback_lnm.php';
+$validationURL='https://radiant-castle-32278.herokuapp.com/callback_lnm.php'
 // $CallBackURL= 'http://'.$ipaddress.'/Payment.php';
 $AccountReference=$data->accRef;
 $TransactionDesc='Smart Dada';
