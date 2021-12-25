@@ -18,32 +18,32 @@ $log=fopen($logFile,"a");
  fclose($log);
 
  echo $response;
-//print_r($mpesaResponse);
-// $data=json_decode($mpesaResponse);
-// print_r($data);
+print_r($mpesaResponse);
+$data=json_decode($mpesaResponse);
+print_r($data);
 
 
-// $MerchantRequestID=$data->Body->stkCallback->MerchantRequestID;
-// $CheckoutRequestID=$data->Body->stkCallback->CheckoutRequestID;
-// $ResultCode=$data->Body->stkCallback->ResultCode;
+$MerchantRequestID=$data->Body->stkCallback->MerchantRequestID;
+$CheckoutRequestID=$data->Body->stkCallback->CheckoutRequestID;
+$ResultCode=$data->Body->stkCallback->ResultCode;
 
-// if($ResultCode==0)
-// {
-// 	$Amount=$data->Body->stkCallback->CallbackMetadata->Item[0]->Value;
-// 	$MpesaReceiptNumber=$data->Body->stkCallback->CallbackMetadata->Item[1]->Value;
-// 	$TransactionDate=$data->Body->stkCallback->CallbackMetadata->Item[3]->Value;
-// 	$PhoneNumber=$data->Body->stkCallback->CallbackMetadata->Item[4]->Value;
+if($ResultCode==0)
+{
+	$Amount=$data->Body->stkCallback->CallbackMetadata->Item[0]->Value;
+	$MpesaReceiptNumber=$data->Body->stkCallback->CallbackMetadata->Item[1]->Value;
+	$TransactionDate=$data->Body->stkCallback->CallbackMetadata->Item[3]->Value;
+	$PhoneNumber=$data->Body->stkCallback->CallbackMetadata->Item[4]->Value;
 
-// 	// INSERT INTO DATABASE
-// 	$qryArray=array(
-// 		":MerchantRequestID"=>$MerchantRequestID,
-// 		":CheckoutRequestID"=>$CheckoutRequestID,
-// 		":Amount"=>$Amount,
-// 		":MpesaReceiptNumber"=>$MpesaReceiptNumber,
-// 		":TransactionDate"=>$TransactionDate,
-// 		":PhoneNumber"=>$PhoneNumber
-// 	);
-// 	}
+	// INSERT INTO DATABASE
+	$qryArray=array(
+		":MerchantRequestID"=>$MerchantRequestID,
+		":CheckoutRequestID"=>$CheckoutRequestID,
+		":Amount"=>$Amount,
+		":MpesaReceiptNumber"=>$MpesaReceiptNumber,
+		":TransactionDate"=>$TransactionDate,
+		":PhoneNumber"=>$PhoneNumber
+	);
+	}
 // $servername = "localhost";
 // $username = "root";
 // $password = "";

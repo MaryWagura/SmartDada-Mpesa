@@ -22,7 +22,7 @@ if (isset($_POST['submitReg'])) {
 
 	
 
- 	$url="./LNM/stkPush.php";
+ 	$url=".../stkPush.php";
  	$curl = curl_init();
  			curl_setopt($curl, CURLOPT_URL, $url);
  			curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
