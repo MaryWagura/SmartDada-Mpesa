@@ -26,7 +26,7 @@ echo $access_token;
 //$token =$access_token;
 
 
-$url = 'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest';
+$url = 'https://sandbox.safaricom.co.ke/mpesa/c2b/v1/simulate';
 
 $curl = curl_init();
 curl_setopt($curl, CURLOPT_URL, $url);
