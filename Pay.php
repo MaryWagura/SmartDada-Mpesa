@@ -1,5 +1,4 @@
 <?php
-echo "bhjnmk";
 require_once('Lipa-Mpesa.php');
 
 
