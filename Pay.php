@@ -6,7 +6,7 @@ require_once('stkPush.php');
 
 if (isset($_POST['pay'])) {
 	$phonenumber=$_POST['phonenumber'];
-	$accRef="Smart Dada"
+	$accRef="Smart Dada";
 	echo $phonenumber;
 	echo $accRef;
 	$amount=1;
