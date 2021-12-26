@@ -1,6 +1,8 @@
-.btnContactSubmit
+.button
 {
-    width: 30%;
+    width: 50%;
+    border-radius: 1rem;
+    padding: 1.5%;
     color: purple;
     background-color: purple;
     border: none;
