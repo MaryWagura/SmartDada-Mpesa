@@ -1,134 +1,147 @@
-<!-- <?php
-session_start();
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "dogregistrationke";
-$_SESSION['DogLicenseNumber'];
-$DogLicenseNumber="DogLicenseNumber";
-$FirstName=$_SESSION['FirstName'];
-$IDNumber=$_SESSION['IDNumber'];
-$OwnerID=$_SESSION["OwnerID"];
-
-$conn= new mysqli($servername, $username, $password,$dbname);
-    $result=$conn->query("SELECT * FROM ownerinformation where FirstName='$FirstName' and IDNumber ='$IDNumber'") or die("Failed to query DB".mysql_error());
- $row= mysqli_fetch_array($result);
- ?>
- <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "dogregistrationke";
-$DogLicenseNumber=$_SESSION["DogLicenseNumber"];
-
-  $connection= new mysqli($servername, $username, $password,$dbname);
- $res=$connection->query("SELECT * FROM petdetails where DogLicenseNumber='$DogLicenseNumber' ") or die("Failed to query DB".mysql_error());
- $row= mysqli_fetch_array($res);
-   $_SESSION['DogLicenseNumber'] = $row["DogLicenseNumber"]."<br><br>";
- ?> -->
- <!DOCTYPE html>
- <html>
- <head>
-  <title>Donation</title>
- </head>
- <body>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="Payments.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="Styles/jquery-3.3.1.min.js" type="text/javascript"></script>
-        <script src="Styles/bootstrap-4.1.0.min.js" type="text/javascript"></script>
-        <link href="Styles/bootstrap-4.1.0.min.css" rel="stylesheet" type="text/css"/>
-        <link href="Styles/MainStyle.css" rel="stylesheet" type="text/css"/>
-        <title></title>
-    </head>
-    <body>
-        <?php
-      
-        ?>
-          <div class="w3-bar w3-pink w3-card w3-left-align w3-large">
-    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white">Donation - Smart Dada</a>
-                       </div>
-                       <center>
-        <div class="container register">
-            <center>
-            <div class="row" >
-                <div class="col-md-12">
-                    <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
-                           
-                    </ul>
-                    <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade show active text-align form-new" id="home" role="tabpanel" aria-labelledby="home-tab">
-                            <h5 class="register-heading"><i>Mpesa Donation Form</h5></i>
-                            <div class="row register-form">
-                                <div class="col-md-12">
-                                    <form method="post">
-                                       
-         <p><b>Amount to Pay: 500</p></b>
-         <label for="phonenumber"><b>Input Your Phone Number</label><br><br></b>
-        <input type="text" class="form-control" name="phonenumber" placeholder="07" required><br><br> 
-                                            
-                                        <div class="form-group" method="POST">
-                                             <a href="Pay.php">
-                                           <input type="button"  class="btnContactSubmit" value="Pay">
-                                            </a></div>
-                                          
-                                           </div> 
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade show text-align form-new" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </body>
-</html>
-  
-
-  <div id="display">
-    <link rel="stylesheet" type="text/css" href="Payment.css">
-    
-
-  
-   <div id="display2">
-  
-
-       
-
-       
-       
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<?php 
+//!Getting the phone No.
 
 
 
-    </div>
-  </div>
-  </form>
-</div>
-</label>
-
-</form> 
-</form>
-</center>
-</center>
-
+//  //Access token
+//  $access_token_url = 'https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials';
  
- </body>
- </html>
+//  $curl = curl_init($access_token_url);
+//  curl_setopt($curl, CURLOPT_URL, $access_token_url);
+//  $credentials = base64_encode('h8OLwRAO8EvN7nlzGAAnO8SdMv3JlvsF:nw0NTustPaAH8gdt');
+//  curl_setopt($curl, CURLOPT_HTTPHEADER, array('Authorization: Basic '.$credentials)); //setting a custom header
+//  curl_setopt($curl, CURLOPT_HEADER, false);
+//  curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+//  curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+
+//  $curl_response = curl_exec($curl);//Contains the access token and the time it takes to expire
+
+//  $access_token = json_decode($curl_response)->access_token;
+
+// //  *echo $access_token; Testing works.
+//  curl_close($curl);
+//  return $access_token;
+
+
+//!Initiating the transaction 
+
+//define variables
+// $initiate_url = 'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest';
+
+// $BusinessShortcode = '174379';
+// $Timestamp = date('YmdGis');
+// $PartyA = '254'.$phone_no;//25491278088
+// $CallBackURL = 'http://'.$localIP.'/M-ticket/Booking_n_Ticketing-master/callback_url.php';
+// $AccountReference =  'M-ticket.com ';
+// $TransactionDesc =  'Transaction description ';
+// $Amount = $_POST['total-pay'];
+// $Passkey = 'bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919';
+// $Password = base64_encode($BusinessShortcode.$Passkey.$Timestamp);
+
+// $stkheader = ['Content-Type:application/json','Authorization:Bearer '.$access_token];
+// $curl = curl_init();
+// curl_setopt($curl, CURLOPT_URL, $initiate_url);
+// curl_setopt($curl, CURLOPT_HTTPHEADER, $stkheader); //setting custom header
+
+
+// $curl_post_data = array(
+//   //Fill in the request parameters with valid values
+//   'BusinessShortCode' => $BusinessShortcode,
+//   'Password' => $Password,
+//   'Timestamp' => $Timestamp,
+//   'TransactionType' => 'CustomerPayBillOnline',
+//   'Amount' =>$Amount,
+//   'PartyA' => $PartyA,
+//   'PartyB' => $BusinessShortcode,
+//   'PhoneNumber' => $PartyA,
+//   'CallBackURL' => $CallBackURL,
+//   'AccountReference' => $AccountReference,
+//   'TransactionDesc' => $TransactionDesc
+// );
+
+// $data_string = json_encode($curl_post_data);
+
+// curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+// curl_setopt($curl, CURLOPT_POST, true);
+// curl_setopt($curl, CURLOPT_POSTFIELDS, $data_string);
+
+// $curl_response = curl_exec($curl);
+// print_r($curl_response);
+
+// echo $curl_response;
+// //header("Location: Test.php");
+
+function accessTokenGenerator(){
+  //Access token
+  $access_token_url = 'https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials';
+    
+  $curl = curl_init($access_token_url);
+  curl_setopt($curl, CURLOPT_URL, $access_token_url);
+  $credentials = base64_encode('h8OLwRAO8EvN7nlzGAAnO8SdMv3JlvsF:nw0NTustPaAH8gdt');
+  curl_setopt($curl, CURLOPT_HTTPHEADER, array('Authorization: Basic '.$credentials)); //setting a custom header
+  curl_setopt($curl, CURLOPT_HEADER, false);
+  curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+  curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+
+  $curl_response = curl_exec($curl);//Contains the access token and the time it takes to expire
+
+  $access_token = json_decode($curl_response)->access_token;
+
+  // *echo $access_token; Testing works.
+  curl_close($curl);
+  return $access_token;
+
+}
+
+function mpesaSendMoney($phone_no, $total_amt, $accRef, $access_token ){
+  //define variables
+  $phone_no =ltrim($phone_no, '0');
+  $localIP = getHostByName(getHostName());
+  $initiate_url = 'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest';
+
+  $BusinessShortcode = '174379';
+  $Timestamp = date('YmdGis');
+  $PartyA = '254'.$phone_no;//25491278088
+  //$CallBackURL = 'https://76921b4f.ngrok.io/LNM/callback_lnm.php';
+   $CallBackURL = 'http://'.$localIP.'/LNM/callback_lnm.php';
+  $AccountReference = $accRef; 
+  $TransactionDesc =  'Dog Reg ';
+  $Amount = $total_amt;
+  $Passkey = 'bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919';
+  $Password=base64_encode($BusinessShortcode.$Passkey.$Timestamp);
+
+  $stkheader = ['Content-Type:application/json','Authorization:Bearer '.$access_token];
+  $curl = curl_init();
+  curl_setopt($curl, CURLOPT_URL, $initiate_url);
+  curl_setopt($curl, CURLOPT_HTTPHEADER, $stkheader); //setting custom header
+
+
+  $curl_post_data = array(
+    //Fill in the request parameters with valid values
+    'BusinessShortCode' => $BusinessShortcode,
+    'Password' => $Password,
+    'Timestamp' => $Timestamp,
+    'TransactionType' => 'CustomerPayBillOnline',
+    'Amount' =>$Amount,
+    'PartyA' => $PartyA,
+    'PartyB' => $BusinessShortcode,
+    'PhoneNumber' => $PartyA,
+    'CallBackURL' => $CallBackURL,
+    'AccountReference' => $AccountReference,
+    'TransactionDesc' => $TransactionDesc
+  );
+
+  $data_string = json_encode($curl_post_data);
+
+  curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+  curl_setopt($curl, CURLOPT_POST, true);
+  curl_setopt($curl, CURLOPT_POSTFIELDS, $data_string);
+
+  $curl_response = curl_exec($curl);
+  print_r($curl_response);
+
+  echo $curl_response;
+  sleep(5);
+}
+
+?>

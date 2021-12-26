@@ -2,11 +2,11 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-//require_once('Lipa-Mpesa.php');
+require_once('stkPush.php');
 
 if (isset($_POST['pay'])) {
 	$phonenumber=$_POST['phonenumber'];
-	$accRef=$_POST['accRef'];
+	$accRef="Smart Dada"
 	echo $phonenumber;
 	echo $accRef;
 	$amount=1;
@@ -16,7 +16,7 @@ if (isset($_POST['pay'])) {
 
 
 
- 	$push = array('telNum' => $phonenumber,'Amount'=>$amount ,'accRef'=>$licenseNum);
+ 	$push = array('telNum' => $phonenumber,'Amount'=>$amount ,'accRef'=>$accRef);
     print_r($push);
    $arr=json_encode($push);
 
