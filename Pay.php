@@ -2,20 +2,22 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+require_once('Lipa-Mpesa.php');
 
 if (isset($_POST['pay'])) {
 	$phonenumber=$_POST['phonenumber'];
+	$accRef=$_POST['accRef'];
 	echo $phonenumber;
+	echp $accRef;
 	$amount=1;
-	$accRef=$_POST['SmartDada'];
-	echo "string";
+	$accRef="Smart Dada";
 	 $access_token = accessTokenGenerator();
-	 mpesaSendMoney($telNum, $amount, $accRef, $access_token );
+	 mpesaSendMoney($phonenumber, $amount, $accRef, $access_token );
 	
 
 
 
- 	$push = array('telNum' => $telNum,'Amount'=>$amount ,'accRef'=>$licenseNum);
+ 	$push = array('telNum' => $phonenumber,'Amount'=>$amount ,'accRef'=>$licenseNum);
     print_r($push);
    $arr=json_encode($push);
 
