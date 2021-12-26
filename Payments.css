@@ -26,10 +26,9 @@
     margin-right: 22%;
     margin-left: 20%;
 }
-.register{
+.container-register{
     background: -webkit-linear-gradient(left, purple, purple);
-    margin-top: 2%;
-    border-radius: 1.5rem;
+   
     }
 .register-heading{
     margin-left: 21%;
