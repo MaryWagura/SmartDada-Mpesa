@@ -7,8 +7,6 @@ require_once('Lipa-Mpesa.php');
 if (isset($_POST['pay'])) {
 	$phonenumber=$_POST['phonenumber'];
 	$accRef="Smart Dada";
-	echo $phonenumber;
-	echo $accRef;
 	$amount=1;
 	 $access_token = accessTokenGenerator();
 	 mpesaSendMoney($phonenumber, $amount, $accRef, $access_token );
