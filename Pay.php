@@ -2,7 +2,7 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-require_once('stkPush.php');
+require_once('Lipa-Mpesa.php');
 
 if (isset($_POST['pay'])) {
 	$phonenumber=$_POST['phonenumber'];

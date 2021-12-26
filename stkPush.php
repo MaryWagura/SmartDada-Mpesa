@@ -3,13 +3,10 @@ require_once('access_token.php');
 
 $userData = file_get_contents('php://input');
 // $ipaddress = getHostByName(getHostByName());
-$consumerKey ="30seb4c6qEUVhsmVGFwHbtgUAMXTCSka";
-$consumerSecret = "Ev4Av18m4ZMwzznY";
 
- $BusinessShortCode = '174379';
-  $Passkey = 'bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919';  
+$token =$access_token;
+$url = 'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest';
 
-$headers=['Content-Type:application/json; charset=utf8'];
 
 $url = 'https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials';
 $curl=curl_init($url);
@@ -24,9 +21,9 @@ $result=json_decode($result);
 
 $access_token=$result->access_token;
 
-//echo $access_token;
+// //echo $access_token;
 
-$url = 'https://sandbox.safaricom.co.ke/mpesa/c2b/v1/registerurl';
+// $url = 'https://sandbox.safaricom.co.ke/mpesa/c2b/v1/registerurl';
 
 $curl = curl_init();
 curl_setopt($curl, CURLOPT_URL, $url);
@@ -42,27 +39,26 @@ if (date('G')<10)
 
 $data = json_decode($userData);
 
-  $initiate_url = 'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest';
 
 $BusinessShortCode='174379';
 $Amount=$data->Amount;
 $PhoneNumber=$data->telNum;
 $CallBackURL=' https://radiant-castle-32278.herokuapp.com/callback_lnm.php';
-$validationURL='https://radiant-castle-32278.herokuapp.com/callback_lnm.php';
+//$validationURL='https://radiant-castle-32278.herokuapp.com/callback_lnm.php';
 // $CallBackURL= 'http://'.$ipaddress.'/Payment.php';
 $AccountReference=$data->accRef;
 $TransactionDesc='Smart Dada';
 $passkey="bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919";
 $Password=base64_encode($BusinessShortCode.$passkey.$Timestamp);
-# header for access token
-  $headers = ['Content-Type:application/json; charset=utf8'];
+// # header for access token
+//   $headers = ['Content-Type:application/json; charset=utf8'];
 
-    # M-PESA endpoint urls
-  $access_token_url = 'https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials';
-  $initiate_url = 'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest';
+//     # M-PESA endpoint urls
+//   $access_token_url = 'https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials';
+//   $initiate_url = 'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest';
 
-  # callback url
-  $CallBackURL = 'https://radiant-castle-32278.herokuapp.com/callback_url.php';  
+//   # callback url
+//   $CallBackURL = 'https://radiant-castle-32278.herokuapp.com/callback_url.php';  
 
 
 

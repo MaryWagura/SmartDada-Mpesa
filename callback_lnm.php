@@ -1,5 +1,5 @@
 <?php
-//require('../classes/config.php');
+require('../classes/config.php');
 header("Content-Type: application/json");
 
 $response= '
