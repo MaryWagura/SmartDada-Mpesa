@@ -1,4 +1,5 @@
 <?php
+require_once('access_token.php');
 
 $userData = file_get_contents('php://input');
 // $ipaddress = getHostByName(getHostByName());
