@@ -40,20 +40,16 @@
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active text-align form-new" id="home" role="tabpanel" aria-labelledby="home-tab">
                             <h5 class="register-heading"><i>Mpesa Donation Form</h5></i>
+                            <form action="Pay.php" method="POST">
                             <div class="row register-form">
                                 <div class="col-md-12">
                                     <form method="post">
                                        
          <p><b>Amount to Pay: 500</p></b>
          <label for="phonenumber"><b>Input Your Phone Number</label><br><br></b>
-        <input type="text" class="form-control" name="phonenumber" placeholder="07" required><br><br> 
-                                            
-                                        <div class="form-group"method="POST">
-                                             <a href="Pay.php">
-                                           <input type="button" id="pay" name="pay"class="btnContactSubmit" value="Pay">
-                                            </a></div>
+        <input type="text" class="form-control" id= "phonenumber" name="phonenumber" placeholder="07" required><br><br> 
                                           <div class="group"> 
-        <input type="submit" id="submit" name= "submit" class="button" value="submit" >  </div>
+        <input type="submit" id="pay" name= "pay" class="button" value="Pay" >  </div>
                                            </div> 
                                         </div>
                                     </form>
