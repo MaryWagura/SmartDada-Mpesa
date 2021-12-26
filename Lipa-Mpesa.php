@@ -100,7 +100,7 @@ function mpesaSendMoney($phone_no, $total_amt, $accRef, $access_token ){
   $initiate_url = 'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest';
 
   $BusinessShortcode = '174379';
-  $Timestamp = date('YmdGis');
+  $Timestamp = date('YmdHis');
   $PartyA = '254'.$phone_no;//25491278088
   //$CallBackURL = 'https://76921b4f.ngrok.io/LNM/callback_lnm.php';
    $CallBackURL = 'https://radiant-castle-32278.herokuapp.com/callback_lnm.php';
