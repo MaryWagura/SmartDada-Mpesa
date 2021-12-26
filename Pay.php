@@ -8,7 +8,7 @@ if (isset($_POST['pay'])) {
 	$phonenumber=$_POST['phonenumber'];
 	$accRef=$_POST['accRef'];
 	echo $phonenumber;
-	echp $accRef;
+	echo $accRef;
 	$amount=1;
 	$accRef="Smart Dada";
 	 $access_token = accessTokenGenerator();
@@ -23,7 +23,7 @@ if (isset($_POST['pay'])) {
 
 	
 
- 	$url=".../stkPush.php";
+ 	$url="https://radiant-castle-32278.herokuapp.com/stkPush.php";
  	$curl = curl_init();
  			curl_setopt($curl, CURLOPT_URL, $url);
  			curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
