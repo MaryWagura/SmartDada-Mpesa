@@ -145,17 +145,16 @@ function mpesaSendMoney($phone_no, $total_amt, $accRef, $access_token ){
 }
 
 echo "123";
-$servername = "localhost:8889";
+$servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "smartdada-mpesa";
 // Create connection
 //$conn = new PDO("mysql:host=$servername;port=8889;dbname=smartdada-mpesa", $username, $password);
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-//check connection
-if (!$conn) {
-  die("Connection failed: " . mysqli_connect_error());
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
 }
 echo "Connected successfully";
-
 ?>
