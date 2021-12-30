@@ -1,4 +1,5 @@
 <?php
+echo "123";
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -10,7 +11,7 @@ if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
 echo "Connected successfully";
-echo "123";
+
 } 
 
 // require('../classes/config.php');
