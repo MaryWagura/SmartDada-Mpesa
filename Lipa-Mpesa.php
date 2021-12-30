@@ -150,6 +150,7 @@ $username = "root";
 $password = "";
 $dbname = "smartdada-mpesa";
 // Create connection
+$conn = new PDO("mysql:host=$servername;port=8889;dbname=smartdada-mpesa", $username, $password);
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 //check connection
 if (!$conn) {
