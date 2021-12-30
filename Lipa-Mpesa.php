@@ -145,7 +145,7 @@ function mpesaSendMoney($phone_no, $total_amt, $accRef, $access_token ){
 }
 
 echo "123";
-$servername = "localhost";
+$servername = "127.0.0.1";
 $username = "root";
 $password = "";
 $dbname = "smartdada-mpesa";
