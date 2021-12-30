@@ -45,29 +45,33 @@ if($ResultCode==0)
 		":PhoneNumber"=>$PhoneNumber
 	);
 	}
-// $servername = "localhost";
-// $username = "root";
-// $password = "";
-// $dbname = "dogregistrationke";
-// // Create connection
-// $dbname= new mysqli($servername, $username, $password,$dbname);
-// // Check connection
-// if ($dbname->connect_error) {
-//     die("Connection failed: " . $dbname->connect_error);
-// } 
-// $LicenseNumber=$_POST['LicenseNumber'];
-// $MpesaInvoice=$_POST ['MpesaInvoice'];
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "smartdada-mpesa";
+// Create connection
+$dbname= new mysqli($servername, $username, $password,$dbname);
+// Check connection
+if ($dbname->connect_error) {
+    die("Connection failed: " . $dbname->connect_error);
+} 
+$MerchantRequestID=$_POST['MerchantRequestID'];
+$CheckoutRequestID=$_POST ['CheckoutRequestID'];
+$Amount=$_POST ['Amount'];
+$MpesaReceiptNumber=$_POST ['MpesaReceiptNumber'];
+$TransactionDate=$_POST ['TransactionDate'];
+$PhoneNumber=$_POST ['PhoneNumber'];
 
 
-// 	  $sql = "INSERT INTO paymentdetials(LicenseNumber, MpesaInvoice)
-//      VALUES ('$LicenseNumber', '$MpesaInvoice)";
+	  $sql = "INSERT INTO donations(merchantrequestID, checkoutrequestID, amount, mpesareceiptNumber, transactionDate, phoneNumber)
+     VALUES ('$MerchantRequestId', '$ChekoutRequestID', '$Amount', '$MpesaReceiptNumber', '$TransactionDate', '$PhoneNumber')";
 
-//         if ($dbname->query($sql) === TRUE) {
-//     echo "Records entered successfully";
-//  header('Location:Registerpet.php');
-// } else {
-//     echo "Error: " . $sql . "<br>" . $dbname->error;
-// }
-// $insert= $dbname->query("SELECT LicenseNumber, MpesaInvoice FROM paymentdetials");
+        if ($dbname->query($sql) === TRUE) {
+    echo "Thank You for your donation!";
+ header('Location:Pay.php');
+} else {
+    echo "Error: " . $sql . "<br>" . $dbname->error;
+}
+//$insert= $dbname->query("SELECT LicenseNumber, MpesaInvoice FROM paymentdetials");
 
 ?>
