@@ -12,8 +12,8 @@ $response= '
 $mpesaResponse = file_get_contents('php://input');
 
 //log the response
- $logFile="LNMCallback.txt";
-$log=fopen($logFile,"a");
+ //$logFile="LNMCallback.txt";
+//$log=fopen($logFile,"a");
  fwrite($log, $mpesaResponse);
  fclose($log);
 

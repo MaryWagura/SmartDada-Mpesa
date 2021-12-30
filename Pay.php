@@ -34,6 +34,7 @@ if (isset($_POST['pay'])) {
  			  print_r($curl_response);
  			  echo $curl_response;
  }
+ 
 
 
 ?>
