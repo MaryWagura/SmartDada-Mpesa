@@ -8,7 +8,6 @@ if (isset($_POST['pay'])) {
 	$phonenumber=$_POST['phonenumber'];
 	$amount=$_POST['amount'];
 	$accRef="Smart Dada";
-	//$amount=1;
 	 $access_token = accessTokenGenerator();
 	 mpesaSendMoney($phonenumber, $amount, $accRef, $access_token );
 	
