@@ -141,7 +141,7 @@ function mpesaSendMoney($phone_no, $total_amt, $accRef, $access_token ){
   print_r($curl_response);
 
   echo $curl_response;
-  sleep(5);
+  sleep(1);
 }
 
 ?>
