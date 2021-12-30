@@ -50,11 +50,14 @@ $username = "root";
 $password = "";
 $dbname = "smartdada-mpesa";
 // Create connection
-$dbname= new mysqli($servername, $username, $password,$dbname);
-// Check connection
-if ($dbname->connect_error) {
-    die("Connection failed: " . $dbname->connect_error);
+$conn = mysqli_connect($servername, $username, $password, $db);
+//check connection
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+echo "Connected successfully";
 } 
+
 $MerchantRequestID=$_POST['MerchantRequestID'];
 $CheckoutRequestID=$_POST ['CheckoutRequestID'];
 $Amount=$_POST ['Amount'];
@@ -65,13 +68,20 @@ $PhoneNumber=$_POST ['PhoneNumber'];
 
 	  $sql = "INSERT INTO donations(merchantrequestID, checkoutrequestID, amount, mpesareceiptNumber, transactionDate, phoneNumber)
      VALUES ('$MerchantRequestId', '$ChekoutRequestID', '$Amount', '$MpesaReceiptNumber', '$TransactionDate', '$PhoneNumber')";
-
-        if ($dbname->query($sql) === TRUE) {
+       $exec = $conn->query($query);
+ if ($exec) {
+   
     echo "Thank You for your donation!";
- header('Location:Pay.php');
-} else {
-    echo "Error: " . $sql . "<br>" . $dbname->error;
-}
+   //header("Refresh:0.1; url=Login.php");
+    header('refresh:0.1; url=Pay.php');
+  } else {
+    echo "Oops! Something went wrong. Please try again.";
+    
+  }
+
 //$insert= $dbname->query("SELECT LicenseNumber, MpesaInvoice FROM paymentdetials");
+ ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 ?>
