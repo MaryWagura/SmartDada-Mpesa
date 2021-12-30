@@ -148,7 +148,7 @@ echo "123";
 $servername = "127.0.0.1";
 $username = "root";
 $password = "";
-$DB_PORT=8889;
+$DB_PORT="8889";
 $dbname = "smartdada-mpesa";
 // Create connection
 //$conn = new PDO("mysql:host=$servername;port=8889;dbname=smartdada-mpesa", $username, $password);
