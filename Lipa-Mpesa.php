@@ -151,8 +151,8 @@ $password = "";
 $DB_PORT=8889;
 $dbname = "smartdada-mpesa";
 // Create connection
-$conn = new PDO("mysql:host=$servername;port=8889;dbname=smartdada-mpesa", $username, $password);
-//$conn = mysqli_connect($servername, $username, $password, $dbname);
+//$conn = new PDO("mysql:host=$servername;port=8889;dbname=smartdada-mpesa", $username, $password);
+$conn = mysqli_connect($servername, $username, $password, $DB_PORT,$dbname);
 //check connection
 if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
