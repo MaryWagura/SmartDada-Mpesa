@@ -144,4 +144,18 @@ function mpesaSendMoney($phone_no, $total_amt, $accRef, $access_token ){
   sleep(1);
 }
 
+echo "123";
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "smartdada-mpesa";
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+//check connection
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+echo "Connected successfully";
+
+} 
 ?>
