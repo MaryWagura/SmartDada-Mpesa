@@ -146,7 +146,7 @@ function mpesaSendMoney($phone_no, $total_amt, $accRef, $access_token ){
  sleep(1);
 }
 
-$ref= "Mpesa-Donations";
+$ref= "Mpesa-Donations/";
 $postdata= $firebase->getReference($ref)->push($curl_response);
 
 if($postdata)
