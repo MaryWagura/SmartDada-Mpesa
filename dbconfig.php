@@ -10,8 +10,8 @@
  $factory= (new Factory)
 
    ->withServiceAccount(__DIR__.'/smartdada-36cf3-firebase-adminsdk-z3bh9-828e575971.json')
-   ->withDatabaseUrl('https://smartdada-36cf3-default-rtdb.firebaseio.com/')
-   ->create();
+   ->withDatabaseUrl('https://smartdada-36cf3-default-rtdb.firebaseio.com/');
+   //->create();
 
    $database = $factory->createDatabase();
 
