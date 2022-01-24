@@ -142,6 +142,8 @@ function mpesaSendMoney($phone_no, $total_amt, $accRef, $access_token ){
   print_r($curl_response);
 
   echo $curl_response;
+   $_SESSION['status']= "Thank You";
+  header("location: Index.php");
   sleep(1);
 }
 
