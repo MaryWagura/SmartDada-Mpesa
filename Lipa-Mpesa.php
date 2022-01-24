@@ -143,7 +143,7 @@ function mpesaSendMoney($phone_no, $total_amt, $accRef, $access_token ){
   if($curl_response)
   {
      echo "Thank You ";
-      header("Refresh:0.1; url=index.php");
+      header("Refresh:0.5; url=index.php");
   }else 
 
    echo  "Transaction Failed. Please try again.";
