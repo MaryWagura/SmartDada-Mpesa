@@ -1,6 +1,6 @@
 <?php 
 session_start();
-//require_once('dbconfig.php');
+require_once('dbconfig.php');
 //!Getting the phone No.
 
 
@@ -140,24 +140,23 @@ function mpesaSendMoney($phone_no, $total_amt, $accRef, $access_token ){
   curl_setopt($curl, CURLOPT_POSTFIELDS, $data_string);
   $curl_response = curl_exec($curl);
  // print_r($curl_response);
-
-//  echo $curl_response;
-   echo  "Thank You";
-  header("location: index.php");
-  sleep(1);
+ echo $curl_response;
+  //  echo  "Thank You";
+  // header("location: index.php");
+ sleep(1);
 }
 
 $ref= "Mpesa-Donations";
-//$postdata= $database->getReference($ref)->push($curl_response);
+$postdata= $database->getReference($ref)->push($curl_response);
 
-// if($postdata)
-// {
-//   $_SESSION['status']= "Data saved";
-//   header("location: Index.php");
+if($postdata)
+{
+  $_SESSION['status']= "Data saved";
+  header("location: index.php");
 
-// }else
-// {
-//        $_SESSION['status']= "Error not saved";
-//   header("location: Index.php");
-// }
+}else
+{
+       $_SESSION['status']= "Error not saved";
+  header("location: index.php");
+}
 ?>
