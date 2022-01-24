@@ -1,5 +1,5 @@
 <?php
- require once __DIR__.'/vendor/autoload.php';
+ require  __DIR__.'/vendor/autoload.php';
 
  use Kreait\Firebase\Factory;
  use Kreait\Firebase\ServiceAccount;
