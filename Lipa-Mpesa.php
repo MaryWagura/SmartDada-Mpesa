@@ -1,4 +1,6 @@
 <?php 
+session_start();
+require_once('dbconfig.php');
 //!Getting the phone No.
 
 
@@ -136,7 +138,6 @@ function mpesaSendMoney($phone_no, $total_amt, $accRef, $access_token ){
   curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
   curl_setopt($curl, CURLOPT_POST, true);
   curl_setopt($curl, CURLOPT_POSTFIELDS, $data_string);
-
   $curl_response = curl_exec($curl);
   print_r($curl_response);
 
@@ -144,17 +145,17 @@ function mpesaSendMoney($phone_no, $total_amt, $accRef, $access_token ){
   sleep(1);
 }
 
-echo "123";
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "smartdada-mpesa";
-// Create connection
-//$conn = new PDO("mysql:host=$servername;port=8889;dbname=smartdada-mpesa", $username, $password);
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-// Check connection
-if (!$conn) {
-  die("Connection failed: " . mysqli_connect_error());
+$ref= "Mpesa-Donations";
+$postdata= $database->getReference($ref)->push($curl_response);
+
+if($postdata)
+{
+  $_SESSION['status']= "Data saved";
+  header("location: Index.php");
+
+}else
+{
+       $_SESSION['status']= "Error not saved";
+  header("location: Index.php");
 }
-echo "Connected successfully";
 ?>
