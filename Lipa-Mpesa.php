@@ -146,16 +146,16 @@ function mpesaSendMoney($phone_no, $total_amt, $accRef, $access_token ){
 }
 
 $ref= "Mpesa-Donations";
-$postdata= $database->getReference($ref)->push($curl_response);
+//$postdata= $database->getReference($ref)->push($curl_response);
 
-if($postdata)
-{
-  $_SESSION['status']= "Data saved";
-  header("location: Index.php");
+// if($postdata)
+// {
+//   $_SESSION['status']= "Data saved";
+//   header("location: Index.php");
 
-}else
-{
-       $_SESSION['status']= "Error not saved";
-  header("location: Index.php");
-}
+// }else
+// {
+//        $_SESSION['status']= "Error not saved";
+//   header("location: Index.php");
+// }
 ?>
