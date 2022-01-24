@@ -13,6 +13,6 @@ $serviceAccount= ServiceAccount::fromJsonFile(__DIR__.'/smartdada-36cf3-firebase
    ->withDatabaseUrl('https://smartdada-36cf3-default-rtdb.firebaseio.com/');
    ->create();
 
-   $database = $factory->createDatabase();
+   $database = $firebase->getDatabase();
 
 ?>
