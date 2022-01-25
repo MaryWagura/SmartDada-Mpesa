@@ -44,9 +44,9 @@
                             <div class="row register-form">
                                 <div class="col-md-12">
                                     <form method="post">
-           <label for="amount"><h4 style="color:white"><b>Input Amount</label><br><br></b></h4>
+           <label for="amount"><h5 style="color:white"><b>Input Amount</label><br><br></b></h5>
         <input type="text" class="form-control" id = "amount" name="amount" required><br><br> 
-          <label for="phonenumber"><h4 style="color:white"><b>Input Your Phone Number</label><br><br></b></h4>
+          <label for="phonenumber"><h5 style="color:white"><b>Input Your Phone Number</label><br><br></b></h5>
         <input type="text" class="form-control" id = "phonenumber" name="phonenumber" placeholder="07" required><br><br> 
                                           <div class="form-group"> 
        <div class="group">  <input type="submit" id="pay" name= "pay" class="button" value="Donate" >  </div>
