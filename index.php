@@ -43,7 +43,7 @@
                             <form action="Pay.php" method="POST">
                             <div class="row register-form">
                                 <div class="col-md-12">
-                                    <form method="post">
+                                    <form method="post"><br>
            <label for="amount"><h5 style="color:white"><b>Input Amount</label><br><br></b></h5>
         <input type="text" class="form-control" id = "amount" name="amount" required><br><br> 
           <label for="phonenumber"><h5 style="color:white"><b>Input Your Phone Number</label><br><br></b></h5>
